@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: terminal | Theldoria's Blog]]></title>
+  <link href="http://theldoria.github.io/blog/categories/terminal/atom.xml" rel="self"/>
+  <link href="http://theldoria.github.io/"/>
+  <updated>2013-06-26T13:36:23+02:00</updated>
+  <id>http://theldoria.github.io/</id>
+  <author>
+    <name><![CDATA[Theldoria]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Freezing vi]]></title>
+    <link href="http://theldoria.github.io/blog/2013/06/26/freezing-vi/"/>
+    <updated>2013-06-26T10:29:00+02:00</updated>
+    <id>http://theldoria.github.io/blog/2013/06/26/freezing-vi</id>
+    <content type="html"><![CDATA[<p>Today I stumbled over an frozen vi, after using <code>ctrl-s</code> (from a remote session). To resolve it simply use <code>ctrl-q</code>.</p>
+
+<p>This can easily happen if you switch from emacs, where <code>C-x C-s</code> saves the buffer, to vi, where you have to use <code>ESC :w</code>.</p>
+
+<p>The reason for this is the <a href="http://en.wikipedia.org/wiki/XON%20XON/XOFF">XON/XOFF protocol</a>. Sending <code>ctrl-s</code> is XOFF, stopping the communication (in one direction), and <code>ctrl-q</code> sends XON, reenabling the data exchange.</p>
+]]></content>
+  </entry>
+  
+</feed>

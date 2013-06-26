@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Post with octopress - Theldoria's Blog</title>
+  <title>Theldoria's Blog</title>
   <meta name="author" content="Theldoria">
 
   
-  <meta name="description" content="This is my first post with octopress. Now I&rsquo;m gonna look around to find out how it work&rsquo;s and if I cand use it as a tool to store useful &hellip;">
+  <meta name="description" content="In order to add Categories and Tags pages, create those: rake new_page[blog/categories]
+rake new_page[blog/tags] And insert the following content: &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://theldoria.github.io/blog/2013/06/25/post-with-octopress">
+  <link rel="canonical" href="http://theldoria.github.io/blog">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Theldoria's Blog" type="application/atom+xml">
@@ -65,12 +66,202 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div>
-<article class="hentry" role="article">
+      <div class="blog-index">
   
+  
+  
+    <article>
+      
   <header>
     
-      <h1 class="entry-title">Post With Octopress</h1>
+      <h1 class="entry-title"><a href="/blog/2013/06/26/categories-and-tags-in-octopress/">Categories and Tags in Octopress</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-26T12:39:00+02:00" pubdate data-updated="true">Jun 26<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/06/26/categories-and-tags-in-octopress/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In order to add Categories and Tags pages, create those:</p>
+
+<pre><code>rake new_page[blog/categories]
+rake new_page[blog/tags]
+</code></pre>
+
+<p>And insert the following content:</p>
+
+<figure class='code'><figcaption><span>blog/categories </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;ul>
+</span><span class='line'>{% for item in site.categories %}
+</span><span class='line'>    &lt;li>&lt;a href="/blog/categories/{{ item[0] }}/">{{ item[0] | capitalize }}&lt;/a> [ {{ item[1].size }} ]&lt;/li>
+</span><span class='line'>{% endfor %}
+</span><span class='line'>&lt;/ul></span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>plain blog/tags </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;ul>
+</span><span class='line'>{% for item in site.tags %}
+</span><span class='line'>    &lt;li>&lt;a href="/blog/tags/{{ item[0] }}/">{{ item[0] | capitalize }}&lt;/a> [ {{ item[1].size }} ]&lt;/li>
+</span><span class='line'>{% endfor %}
+</span><span class='line'>&lt;/ul></span></code></pre></td></tr></table></div></figure>
+
+
+<p>Finally add them to the navigation bar:</p>
+
+<figure class='code'><figcaption><span>plain source/_includes/custom/navigation.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'>  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{ root_url }}/blog/categories&quot;</span><span class="nt">&gt;</span>Categories<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{ root_url }}/blog/tags&quot;</span><span class="nt">&gt;</span>Tags<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/26/deploying-to-heroku/">Deploying to Heroku</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-26T11:52:00+02:00" pubdate data-updated="true">Jun 26<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/06/26/deploying-to-heroku/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>To add a new heroku app simply call:</p>
+
+<pre><code>heroku create
+</code></pre>
+
+<p>You now should have a heroku remote. Check with:</p>
+
+<pre><code>$ git remote -v
+</code></pre>
+
+<p>You can set heroku to be the default remote for push/free:</p>
+
+<pre><code>$ git config branch.master.remote heroku
+</code></pre>
+
+<p>You can deploy with:</p>
+
+<pre><code>$ git push heroku master
+</code></pre>
+
+<p>If you encounter the error <code>Permission denied (publickey).</code> while pushing, you may have to add your public key:</p>
+
+<pre><code>$ heroku keys:add ~/.ssh/id_rsa.pub
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/26/freezing-vi/">Freezing Vi</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-26T10:29:00+02:00" pubdate data-updated="true">Jun 26<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/06/26/freezing-vi/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Today I stumbled over an frozen vi, after using <code>ctrl-s</code> (from a remote session). To resolve it simply use <code>ctrl-q</code>.</p>
+
+<p>This can easily happen if you switch from emacs, where <code>C-x C-s</code> saves the buffer, to vi, where you have to use <code>ESC :w</code>.</p>
+
+<p>The reason for this is the <a href="http://en.wikipedia.org/wiki/XON%20XON/XOFF">XON/XOFF protocol</a>. Sending <code>ctrl-s</code> is XOFF, stopping the communication (in one direction), and <code>ctrl-q</code> sends XON, reenabling the data exchange.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/25/post-with-octopress/">Post With Octopress</a></h1>
     
     
       <p class="meta">
@@ -88,14 +279,14 @@
 
 <time datetime="2013-06-25T21:50:00+02:00" pubdate data-updated="true">Jun 25<span>th</span>, 2013</time>
         
-         | <a href="#disqus_thread">Comments</a>
+         | <a href="/blog/2013/06/25/post-with-octopress/#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>This is my first post with octopress. Now I&rsquo;m gonna look around to find out how it work&rsquo;s and if I cand use it as a tool to store useful information an knowledge about hacking.</p>
+  <div class="entry-content"><p>This is my first post with octopress. Now I&rsquo;m gonna look around to find out how it work&rsquo;s and if I cand use it as a tool to store useful information an knowledge about hacking.</p>
 
 <h2>Code Snippets</h2>
 
@@ -174,65 +365,18 @@ $ rake new_page[xyz/page.html]
 $ rake deploy
 </code></pre>
 </div>
-
-
-  <footer>
-    <p class="meta">
-      
   
-
-<span class="byline author vcard">Posted by <span class="fn">Theldoria</span></span>
-
-      
-
-
-
-
-
-
-
-
   
 
 
-<time datetime="2013-06-25T21:50:00+02:00" pubdate data-updated="true">Jun 25<span>th</span>, 2013</time>
-      
-
-<span class="categories">
+    </article>
   
-    <a class='category' href='/blog/categories/blog/'>blog</a>
-  
-</span>
-
-
-    </p>
+  <div class="pagination">
     
-      <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://theldoria.github.io/blog/2013/06/25/post-with-octopress/" data-via="Theldoria" data-counturl="http://theldoria.github.io/blog/2013/06/25/post-with-octopress/" >Tweet</a>
-  
-  
-  
-</div>
-
+    <a href="/blog/archives">Blog Archives</a>
     
-    <p class="meta">
-      
-      
-        <a class="basic-alignment right" href="/blog/2013/06/26/freezing-vi/" title="Next Post: Freezing vi">Freezing vi &raquo;</a>
-      
-    </p>
-  </footer>
-</article>
-
-  <section>
-    <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
 </div>
-  </section>
-
-</div>
-
 <aside class="sidebar">
   
     <section>
@@ -261,7 +405,7 @@ $ rake deploy
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating...</li>
+    <li class="loading">Status updating&#8230;</li>
   </ul>
   
   <a href="https://github.com/Theldoria">@Theldoria</a> on GitHub
@@ -294,7 +438,6 @@ $ rake deploy
   
 </aside>
 
-
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -309,10 +452,7 @@ $ rake deploy
       var disqus_shortname = 'Theldoria';
       
         
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://theldoria.github.io/blog/2013/06/25/post-with-octopress/';
-        var disqus_url = 'http://theldoria.github.io/blog/2013/06/25/post-with-octopress/';
-        var disqus_script = 'embed.js';
+        var disqus_script = 'count.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

@@ -2,18 +2,42 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://theldoria.github.io/blog/2013/06/25/post-with-octopress/</loc>
-        <lastmod>2013-06-25T22:04:20+02:00</lastmod>
+        <lastmod>2013-06-26T13:34:58+02:00</lastmod>
+    </url>
+    <url>
+        <loc>http://theldoria.github.io/blog/2013/06/26/freezing-vi/</loc>
+        <lastmod>2013-06-26T13:36:22+02:00</lastmod>
+    </url>
+    <url>
+        <loc>http://theldoria.github.io/blog/2013/06/26/deploying-to-heroku/</loc>
+        <lastmod>2013-06-26T12:04:40+02:00</lastmod>
+    </url>
+    <url>
+        <loc>http://theldoria.github.io/blog/2013/06/26/categories-and-tags-in-octopress/</loc>
+        <lastmod>2013-06-26T13:20:42+02:00</lastmod>
     </url>
     <url>
         <loc>http://theldoria.github.io/</loc>
-        <lastmod>2013-06-25T22:04:20+02:00</lastmod>
+        <lastmod>2013-06-26T13:36:22+02:00</lastmod>
     </url>
     <url>
         <loc>http://theldoria.github.io/robots.txt</loc>
         <lastmod>2013-06-25T21:36:43+02:00</lastmod>
     </url>
     <url>
+        <loc>http://theldoria.github.io/blog/categories/</loc>
+        <lastmod>2013-06-26T12:34:16+02:00</lastmod>
+    </url>
+    <url>
+        <loc>http://theldoria.github.io/blog/</loc>
+        <lastmod>2013-06-26T13:36:22+02:00</lastmod>
+    </url>
+    <url>
+        <loc>http://theldoria.github.io/blog/tags/</loc>
+        <lastmod>2013-06-26T12:50:15+02:00</lastmod>
+    </url>
+    <url>
         <loc>http://theldoria.github.io/blog/archives/</loc>
-        <lastmod>2013-06-25T22:04:20+02:00</lastmod>
+        <lastmod>2013-06-26T13:36:22+02:00</lastmod>
     </url>
 </urlset>

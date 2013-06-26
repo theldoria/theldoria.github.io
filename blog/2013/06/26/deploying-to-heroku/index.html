@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Post with octopress - Theldoria's Blog</title>
+  <title>Deploying to Heroku - Theldoria's Blog</title>
   <meta name="author" content="Theldoria">
 
   
-  <meta name="description" content="This is my first post with octopress. Now I&rsquo;m gonna look around to find out how it work&rsquo;s and if I cand use it as a tool to store useful &hellip;">
+  <meta name="description" content="To add a new heroku app simply call: heroku create You now should have a heroku remote. Check with: $ git remote -v You can set heroku to be the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://theldoria.github.io/blog/2013/06/25/post-with-octopress">
+  <link rel="canonical" href="http://theldoria.github.io/blog/2013/06/26/deploying-to-heroku">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Theldoria's Blog" type="application/atom+xml">
@@ -70,7 +70,7 @@
   
   <header>
     
-      <h1 class="entry-title">Post With Octopress</h1>
+      <h1 class="entry-title">Deploying to Heroku</h1>
     
     
       <p class="meta">
@@ -86,7 +86,7 @@
   
 
 
-<time datetime="2013-06-25T21:50:00+02:00" pubdate data-updated="true">Jun 25<span>th</span>, 2013</time>
+<time datetime="2013-06-26T11:52:00+02:00" pubdate data-updated="true">Jun 26<span>th</span>, 2013</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -95,83 +95,29 @@
   </header>
 
 
-<div class="entry-content"><p>This is my first post with octopress. Now I&rsquo;m gonna look around to find out how it work&rsquo;s and if I cand use it as a tool to store useful information an knowledge about hacking.</p>
+<div class="entry-content"><p>To add a new heroku app simply call:</p>
 
-<h2>Code Snippets</h2>
-
-<p>First of all: it is possible to <a href="http://octopress.org/docs/blogging/code">include code snippets</a> in posts, in several ways, and for many languages. For example, a snippet for ruby, using backticks (used by github):</p>
-
-<h3>Syntax</h3>
-
-<pre><code>``` [language] [title] [url] [link text]
-code snippet
-```
+<pre><code>heroku create
 </code></pre>
 
-<h3>Example</h3>
+<p>You now should have a heroku remote. Check with:</p>
 
-<figure class='code'><figcaption><span>Small ruby backtick example</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">test</span><span class="p">()</span>
-</span><span class='line'>  <span class="nb">puts</span> <span class="s2">&quot;color&quot;</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Without Highlighting</h3>
-
-<p>For code, that does not need to be higlightes (e.g. for shell commands) one can use four spaces in front of the snippet:</p>
-
-<pre><code>snippet
+<pre><code>$ git remote -v
 </code></pre>
 
-<h3>Liquid</h3>
+<p>You can set heroku to be the default remote for push/free:</p>
 
-<p>One can also use <a href="https://github.com/Shopify/liquid/wiki/Liquid-for-Designers">liquid</a> for code snippets. This has the ability to disable tag processing in order to add liquid examples.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>{% codeblock %}
-</span><span class='line'>{% raw %}
-</span><span class='line'>liquid-snippet
-</span><span class='line'>{ % endraw % }
-</span><span class='line'>{% endcodeblock %}</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Links</h2>
-
-<p>Links can be added by using <code>[link text](url)</code>.</p>
-
-<h2>Posting</h2>
-
-<p>Ok, now, in order to post octopress provides a rake command:</p>
-
-<pre><code>$ rake new_post["title"]
+<pre><code>$ git config branch.master.remote heroku
 </code></pre>
 
-<p>This create a new file with right naming convention and puts the filename, so it can be opened with a text editor. I only whished I could set an editor which is fired automatically with the new file&hellip;</p>
+<p>You can deploy with:</p>
 
-<p>One can also create pages:</p>
-
-<pre><code>$ rake new_page["page title"]
-# creates /source/page-title/index.markdown
-
-$ rake new_page[xyz/page.html]
-# creates /source/xyz/page.html
+<pre><code>$ git push heroku master
 </code></pre>
 
-<p>But I am not shure, how those pages my be accessible. Possibly one is expected to add an linkt to them somewhere.</p>
+<p>If you encounter the error <code>Permission denied (publickey).</code> while pushing, you may have to add your public key:</p>
 
-<h2>Deploying</h2>
-
-<p>If new posts are ready the blog can be newly generated and deployed:</p>
-
-<pre><code>$ rake generate
-$ rake deploy
+<pre><code>$ heroku keys:add ~/.ssh/id_rsa.pub
 </code></pre>
 </div>
 
@@ -195,21 +141,15 @@ $ rake deploy
   
 
 
-<time datetime="2013-06-25T21:50:00+02:00" pubdate data-updated="true">Jun 25<span>th</span>, 2013</time>
+<time datetime="2013-06-26T11:52:00+02:00" pubdate data-updated="true">Jun 26<span>th</span>, 2013</time>
       
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/blog/'>blog</a>
-  
-</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://theldoria.github.io/blog/2013/06/25/post-with-octopress/" data-via="Theldoria" data-counturl="http://theldoria.github.io/blog/2013/06/25/post-with-octopress/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://theldoria.github.io/blog/2013/06/26/deploying-to-heroku/" data-via="Theldoria" data-counturl="http://theldoria.github.io/blog/2013/06/26/deploying-to-heroku/" >Tweet</a>
   
   
   
@@ -218,8 +158,10 @@ $ rake deploy
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2013/06/26/freezing-vi/" title="Previous Post: Freezing vi">&laquo; Freezing vi</a>
       
-        <a class="basic-alignment right" href="/blog/2013/06/26/freezing-vi/" title="Next Post: Freezing vi">Freezing vi &raquo;</a>
+      
+        <a class="basic-alignment right" href="/blog/2013/06/26/categories-and-tags-in-octopress/" title="Next Post: Categories and Tags in Octopress">Categories and Tags in Octopress &raquo;</a>
       
     </p>
   </footer>
@@ -310,8 +252,8 @@ $ rake deploy
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://theldoria.github.io/blog/2013/06/25/post-with-octopress/';
-        var disqus_url = 'http://theldoria.github.io/blog/2013/06/25/post-with-octopress/';
+        var disqus_identifier = 'http://theldoria.github.io/blog/2013/06/26/deploying-to-heroku/';
+        var disqus_url = 'http://theldoria.github.io/blog/2013/06/26/deploying-to-heroku/';
         var disqus_script = 'embed.js';
       
     (function () {
