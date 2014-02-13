@@ -286,7 +286,7 @@ rake new_page[blog/tags]
   </header>
 
 
-  <div class="entry-content"><p>This is my first post with octopress. Now I&rsquo;m gonna look around to find out how it work&rsquo;s and if I cand use it as a tool to store useful information an knowledge about hacking.</p>
+  <div class="entry-content"><p>This is my first post with <a href="http://octopress.org">Octopress</a> (a framework designed by <a href="http://brandonmathis.com">Brandon Mathis</a> for <a href="http://github.com/mojombo/jekyll">Jekyll</a>, the blog aware static site generator powering <a href="http://pages.github.com">Github Pages</a>). Now I&rsquo;m gonna look around to find out how it work&rsquo;s and if I cand use it as a tool to store useful information an knowledge about hacking.</p>
 
 <h2>Code Snippets</h2>
 
@@ -312,7 +312,7 @@ code snippet
 
 <h3>Without Highlighting</h3>
 
-<p>For code, that does not need to be higlightes (e.g. for shell commands) one can use four spaces in front of the snippet:</p>
+<p>For code, that does not need to be higlighted (e.g. for shell commands) one can use four spaces in front of the snippet:</p>
 
 <pre><code>snippet
 </code></pre>
@@ -339,7 +339,7 @@ code snippet
 
 <h2>Posting</h2>
 
-<p>Ok, now, in order to post octopress provides a rake command:</p>
+<p>Ok, now, in order to post Octopress provides a rake command:</p>
 
 <pre><code>$ rake new_post["title"]
 </code></pre>
@@ -356,6 +356,17 @@ $ rake new_page[xyz/page.html]
 </code></pre>
 
 <p>But I am not shure, how those pages my be accessible. Possibly one is expected to add an link to them somewhere.</p>
+
+<h2>Preview</h2>
+
+<p>Changes can be inspected before deplying with:</p>
+
+<pre><code>$ rake generate
+$ rake watch    # Watches source/ and sass/ for changes and regenerates
+$ rake preview  # Watches, and mounts a webserver
+</code></pre>
+
+<p>Visit webserver at <a href="http://localhost:4000">http://localhost:4000</a> to see changes.</p>
 
 <h2>Deploying</h2>
 
