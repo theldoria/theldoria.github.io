@@ -4,7 +4,7 @@
   <title><![CDATA[Theldoria's Blog]]></title>
   <link href="http://theldoria.github.io/atom.xml" rel="self"/>
   <link href="http://theldoria.github.io/"/>
-  <updated>2013-06-27T06:36:28+02:00</updated>
+  <updated>2014-02-13T10:50:33+01:00</updated>
   <id>http://theldoria.github.io/</id>
   <author>
     <name><![CDATA[Theldoria]]></name>
@@ -187,7 +187,7 @@ $ rake new_page[xyz/page.html]
 # creates /source/xyz/page.html
 </code></pre>
 
-<p>But I am not shure, how those pages my be accessible. Possibly one is expected to add an linkt to them somewhere.</p>
+<p>But I am not shure, how those pages my be accessible. Possibly one is expected to add an link to them somewhere.</p>
 
 <h2>Deploying</h2>
 

@@ -2,11 +2,11 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://theldoria.github.io/blog/2013/06/25/post-with-octopress/</loc>
-        <lastmod>2013-06-26T13:34:58+02:00</lastmod>
+        <lastmod>2014-02-13T10:48:25+01:00</lastmod>
     </url>
     <url>
         <loc>http://theldoria.github.io/blog/2013/06/26/freezing-vi/</loc>
-        <lastmod>2013-06-26T13:36:22+02:00</lastmod>
+        <lastmod>2013-06-27T06:52:46+02:00</lastmod>
     </url>
     <url>
         <loc>http://theldoria.github.io/blog/2013/06/26/deploying-to-heroku/</loc>
@@ -18,7 +18,7 @@
     </url>
     <url>
         <loc>http://theldoria.github.io/</loc>
-        <lastmod>2013-06-26T13:36:22+02:00</lastmod>
+        <lastmod>2014-02-13T10:48:25+01:00</lastmod>
     </url>
     <url>
         <loc>http://theldoria.github.io/robots.txt</loc>
@@ -30,7 +30,7 @@
     </url>
     <url>
         <loc>http://theldoria.github.io/blog/</loc>
-        <lastmod>2013-06-26T13:36:22+02:00</lastmod>
+        <lastmod>2014-02-13T10:48:25+01:00</lastmod>
     </url>
     <url>
         <loc>http://theldoria.github.io/blog/tags/</loc>
@@ -38,6 +38,6 @@
     </url>
     <url>
         <loc>http://theldoria.github.io/blog/archives/</loc>
-        <lastmod>2013-06-26T13:36:22+02:00</lastmod>
+        <lastmod>2014-02-13T10:48:25+01:00</lastmod>
     </url>
 </urlset>

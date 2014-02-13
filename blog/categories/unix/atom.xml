@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: terminal | Theldoria's Blog]]></title>
-  <link href="http://theldoria.github.io/blog/categories/terminal/atom.xml" rel="self"/>
+  <title><![CDATA[Category: unix | Theldoria's Blog]]></title>
+  <link href="http://theldoria.github.io/blog/categories/unix/atom.xml" rel="self"/>
   <link href="http://theldoria.github.io/"/>
-  <updated>2013-06-27T06:36:28+02:00</updated>
+  <updated>2014-02-13T10:50:33+01:00</updated>
   <id>http://theldoria.github.io/</id>
   <author>
     <name><![CDATA[Theldoria]]></name>
